@@ -1,0 +1,2 @@
+# SwingTrading
+Swing Trading dashboard
