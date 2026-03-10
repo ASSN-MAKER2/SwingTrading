@@ -363,36 +363,8 @@
 </div>
 
 <script>
-const STARTING_BALANCE = 10000;
+const STARTING_BALANCE = 3502.26;
 const RISK_PCT = 0.005;
-
-let trades = JSON.parse(localStorage.getItem('swingtrader_trades') || 'null') || [
-  {id:1,date:"2024-01-08",ticker:"AAPL",shares:50,price:182.5,commission:1,type:"BUY",stopLoss:178},
-  {id:2,date:"2024-01-22",ticker:"AAPL",shares:10,price:191.5,commission:1,type:"SELL",stopLoss:null},
-  {id:3,date:"2024-02-05",ticker:"AAPL",shares:40,price:188.0,commission:1,type:"SELL",stopLoss:null},
-  {id:4,date:"2024-02-12",ticker:"NVDA",shares:15,price:612.0,commission:1,type:"BUY",stopLoss:595},
-  {id:5,date:"2024-02-28",ticker:"NVDA",shares:5,price:790.0,commission:1,type:"SELL",stopLoss:null},
-  {id:6,date:"2024-03-10",ticker:"NVDA",shares:10,price:822.0,commission:1,type:"SELL",stopLoss:null},
-  {id:7,date:"2024-03-18",ticker:"TSLA",shares:30,price:175.0,commission:1,type:"BUY",stopLoss:168},
-  {id:8,date:"2024-04-02",ticker:"TSLA",shares:30,price:160.0,commission:1,type:"SELL",stopLoss:null},
-  {id:9,date:"2024-04-15",ticker:"META",shares:20,price:490.0,commission:1,type:"BUY",stopLoss:475},
-  {id:10,date:"2024-05-01",ticker:"META",shares:6,price:542.0,commission:1,type:"SELL",stopLoss:null},
-  {id:11,date:"2024-05-20",ticker:"META",shares:14,price:515.0,commission:1,type:"SELL",stopLoss:null},
-  {id:12,date:"2024-06-03",ticker:"AMD",shares:40,price:165.0,commission:1,type:"BUY",stopLoss:158},
-  {id:13,date:"2024-06-25",ticker:"AMD",shares:12,price:182.0,commission:1,type:"SELL",stopLoss:null},
-  {id:14,date:"2024-07-10",ticker:"AMD",shares:28,price:178.0,commission:1,type:"SELL",stopLoss:null},
-  {id:15,date:"2024-07-22",ticker:"MSFT",shares:18,price:420.0,commission:1,type:"BUY",stopLoss:408},
-  {id:16,date:"2024-08-15",ticker:"MSFT",shares:18,price:415.0,commission:1,type:"SELL",stopLoss:null},
-  {id:17,date:"2024-09-04",ticker:"GOOGL",shares:35,price:166.0,commission:1,type:"BUY",stopLoss:160},
-  {id:18,date:"2024-09-24",ticker:"GOOGL",shares:10,price:175.0,commission:1,type:"SELL",stopLoss:null},
-  {id:19,date:"2024-10-10",ticker:"GOOGL",shares:25,price:170.0,commission:1,type:"SELL",stopLoss:null},
-  {id:20,date:"2024-11-06",ticker:"AMZN",shares:22,price:196.0,commission:1,type:"BUY",stopLoss:188},
-  {id:21,date:"2024-12-02",ticker:"AMZN",shares:7,price:218.0,commission:1,type:"SELL",stopLoss:null},
-  {id:22,date:"2024-12-20",ticker:"AMZN",shares:15,price:224.0,commission:1,type:"SELL",stopLoss:null},
-  {id:23,date:"2025-01-08",ticker:"CRM",shares:25,price:315.0,commission:1,type:"BUY",stopLoss:304},
-  {id:24,date:"2025-01-28",ticker:"CRM",shares:8,price:352.0,commission:1,type:"SELL",stopLoss:null},
-  {id:25,date:"2025-02-14",ticker:"CRM",shares:17,price:340.0,commission:1,type:"SELL",stopLoss:null},
-];
 
 let nextId = trades.length ? Math.max(...trades.map(t=>t.id))+1 : 1;
 let currentTf = 'ALL';
